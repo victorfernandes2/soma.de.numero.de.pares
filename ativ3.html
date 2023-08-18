@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Sequência de Pares</title>
+ <script>
+ function gerarSequenciaPares() {
+ let qtd = 0; // Quantidade de pares
+ let soma = 0; // Total da soma dos pares
+ let i = 0; // Número sendo analisado no momento
+ let resultado = document.getElementById("resultado");
+
+ // Limpar resultado antes de gerar uma nova sequência
+ resultado.innerHTML = "";
+
+ while (qtd < 50) { // Enquanto quantidade de pares < 50
+ i++;  // Passe para o próximo número
+ if (i % 2 === 0) { // Se o número sendo analisado é par
+ qtd++; // Some 1 na quantidade de pares
+ soma += i; // Some o número sendo analisado com a soma total de pares
+
+ // Crie um novo elemento de parágrafo para exibir o resultado
+ let paragrafo = document.createElement("p");
+ paragrafo.textContent = qtd + ": " + i + " + " + (soma - i) + " = " + soma;
+
+// Adicione o parágrafo ao elemento de resultado
+ resultado.appendChild(paragrafo);
+ }
+ }
+ }
+ </script>
+</head>
+<body>
+ <h1>Sequência de Pares</h1>
+ <button onclick="gerarSequenciaPares()">Gerar Sequência</button>
+ <div id="resultado"></div>
+</body>
+</html>
